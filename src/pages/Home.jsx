@@ -151,42 +151,39 @@ export default function Home() {
             </div>
 
             {/* Event Ticket Card */}
-            <div className="bg-white rounded-2xl shadow-sm overflow-hidden flex">
-              {/* Left Section - Image and Event Details */}
-              <div className="flex-1">
-                {/* Image */}
-                <div className="bg-gray-100 p-2">
+            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+              {/* Top Section - Image and Date */}
+              <div className="flex items-stretch bg-gray-100">
+                <div className="flex-1 p-3">
                   <img
                     src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/7146a9725_full-logo.png"
                     alt="CAF Africa Cup"
-                    className="w-full max-w-[200px] h-auto object-contain"
+                    className="w-full h-full object-contain"
                   />
                 </div>
-                {/* Event Details */}
-                <div className="p-3">
-                  <h3 className="font-semibold text-gray-900 text-sm mb-0.5 leading-tight">
-                    Egypte vs Côte d'Ivoire | Quarts de finale
-                  </h3>
-                  <p className="text-xs text-gray-600">
-                    Grand Stade D'AGADIR
-                  </p>
+                <div className="w-px bg-[#8B1A1A]"></div>
+                <div className="flex flex-col items-center justify-center px-5 py-4">
+                  <div className="text-3xl font-bold text-gray-900">10</div>
+                  <div className="text-xs text-gray-500 uppercase">JAN</div>
+                  <div className="text-xl font-semibold text-gray-900">26</div>
+                  <div className="text-sm text-gray-600 mt-1">20:00</div>
                 </div>
               </div>
 
-              {/* Vertical Red Line */}
-              <div className="w-0.5 bg-[#8B1A1A]"></div>
-
-              {/* Right Section - Date/Time and Ticket Count */}
-              <div className="flex flex-col items-center justify-between py-3 px-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">10</div>
-                  <div className="text-[10px] text-gray-500">JAN</div>
-                  <div className="text-base font-semibold text-gray-700">26</div>
-                  <div className="text-xs text-gray-600 mt-1">20:00</div>
+              {/* Bottom Section - Event Details */}
+              <div className="bg-white p-4 flex items-center justify-between">
+                <div className="flex-1">
+                  <h3 className="font-semibold text-gray-900 text-base mb-1">
+                    Egypte vs Côte d'Ivoire | Quarts de finale
+                  </h3>
+                  <p className="text-sm text-gray-600">
+                    Grand Stade D'AGADIR
+                  </p>
                 </div>
-                <div className="flex items-center gap-1 text-gray-600 mt-2">
-                  <span className="font-medium text-sm">1</span>
-                  <Ticket className="w-3.5 h-3.5" />
+                <div className="flex items-center gap-2 text-gray-600">
+                  <span className="font-medium">1</span>
+                  <Ticket className="w-4 h-4" />
+                  <span>›</span>
                 </div>
               </div>
             </div>
