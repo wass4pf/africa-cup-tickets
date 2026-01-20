@@ -54,28 +54,29 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Transfer Banner */}
-      <div className="px-4 pt-4">
-        <Link
-          to={createPageUrl('Transfers')}
-          className="flex items-center gap-3 bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
-        >
-          <img
-            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/c18d12009_ic_transfer.png"
-            alt="Transfer"
-            className="w-6 h-6 object-contain text-[#8B1A1A]"
-          />
-          <div className="flex-1">
-            <p className="font-semibold text-gray-900">Transfer your tickets!</p>
-            <p className="text-sm text-gray-600">Click here to transfer your tickets</p>
-          </div>
-        </Link>
-      </div>
-
       {/* Main Content */}
       <div className="flex-1 px-4 pt-2 pb-6">
         {activeTab === 'upcoming' ? (
-          <div className="flex flex-col items-center justify-center py-12">
+          <>
+            {/* Transfer Banner */}
+            <div className="mb-4">
+              <Link
+                to={createPageUrl('Transfers')}
+                className="flex items-center gap-3 bg-white rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <img
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/c18d12009_ic_transfer.png"
+                  alt="Transfer"
+                  className="w-6 h-6 object-contain text-[#8B1A1A]"
+                />
+                <div className="flex-1">
+                  <p className="font-semibold text-gray-900">Transfer your tickets!</p>
+                  <p className="text-sm text-gray-600">Click here to transfer your tickets</p>
+                </div>
+              </Link>
+            </div>
+
+            <div className="flex flex-col items-center justify-center py-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
