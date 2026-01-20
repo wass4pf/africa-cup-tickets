@@ -151,27 +151,19 @@ export default function Home() {
             </div>
 
             {/* Event Ticket Card */}
-            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-              {/* Top Section - Image and Date */}
-              <div className="flex items-center bg-gray-100 p-2">
-                <div className="flex-1">
+            <div className="bg-white rounded-2xl shadow-sm overflow-hidden flex">
+              {/* Left Section - Image and Event Details */}
+              <div className="flex-1">
+                {/* Image */}
+                <div className="bg-gray-100 p-2">
                   <img
                     src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/7146a9725_full-logo.png"
                     alt="CAF Africa Cup"
                     className="w-full max-w-[200px] h-auto object-contain"
                   />
                 </div>
-                <div className="text-right pl-3 border-l-2 border-[#8B1A1A]">
-                  <div className="text-2xl font-bold text-gray-900">10</div>
-                  <div className="text-[10px] text-gray-500">JAN</div>
-                  <div className="text-base font-semibold text-gray-700">26</div>
-                  <div className="text-xs text-gray-600 mt-0.5">20:00</div>
-                </div>
-              </div>
-
-              {/* Bottom Section - Event Details */}
-              <div className="p-3 flex items-center justify-between">
-                <div className="flex-1">
+                {/* Event Details */}
+                <div className="p-3">
                   <h3 className="font-semibold text-gray-900 text-sm mb-0.5 leading-tight">
                     Egypte vs Côte d'Ivoire | Quarts de finale
                   </h3>
@@ -179,7 +171,20 @@ export default function Home() {
                     Grand Stade D'AGADIR
                   </p>
                 </div>
-                <div className="flex items-center gap-1 text-gray-600 ml-2">
+              </div>
+
+              {/* Vertical Red Line */}
+              <div className="w-0.5 bg-[#8B1A1A]"></div>
+
+              {/* Right Section - Date/Time and Ticket Count */}
+              <div className="flex flex-col items-center justify-between py-3 px-4">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-gray-900">10</div>
+                  <div className="text-[10px] text-gray-500">JAN</div>
+                  <div className="text-base font-semibold text-gray-700">26</div>
+                  <div className="text-xs text-gray-600 mt-1">20:00</div>
+                </div>
+                <div className="flex items-center gap-1 text-gray-600 mt-2">
                   <span className="font-medium text-sm">1</span>
                   <Ticket className="w-3.5 h-3.5" />
                 </div>
