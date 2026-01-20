@@ -15,77 +15,18 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        {/* CAF Logo Badge */}
+        {/* Official Logo */}
         <motion.div 
-          className="mb-6"
+          className="mb-8"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
         >
-          <div className="bg-white rounded-sm px-2 py-1 flex items-center gap-1 shadow-lg">
-            <span className="text-[#C8102E] font-black text-lg tracking-tight">CAF</span>
-            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-yellow-400 via-green-500 to-blue-500 flex items-center justify-center">
-              <span className="text-white text-[8px] font-bold">25</span>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Tournament Title */}
-        <motion.div 
-          className="text-center mb-8"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-        >
-          <h1 className="text-white font-black text-2xl sm:text-3xl md:text-4xl tracking-wider leading-tight">
-            AFRICA CUP
-          </h1>
-          <h1 className="text-white font-black text-2xl sm:text-3xl md:text-4xl tracking-wider leading-tight">
-            OF NATIONS
-          </h1>
-          <h2 className="text-[#00A651] font-black text-3xl sm:text-4xl md:text-5xl tracking-widest mt-2">
-            MOROCCO 25
-          </h2>
-        </motion.div>
-
-        {/* Trophy/Emblem */}
-        <motion.div 
-          className="mb-12"
-          initial={{ scale: 0, rotate: -10 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ delay: 0.6, type: "spring", stiffness: 200 }}
-        >
-          <div className="relative">
-            {/* Stylized Trophy */}
-            <svg viewBox="0 0 120 140" className="w-28 h-32 sm:w-36 sm:h-40">
-              {/* Trophy Base */}
-              <ellipse cx="60" cy="130" rx="25" ry="6" fill="#8B6914"/>
-              <rect x="45" y="110" width="30" height="20" fill="#D4AF37"/>
-              <rect x="50" y="100" width="20" height="12" fill="#D4AF37"/>
-              
-              {/* Trophy Stem */}
-              <rect x="55" y="70" width="10" height="32" fill="#D4AF37"/>
-              
-              {/* Trophy Cup */}
-              <path d="M25 20 Q25 70 60 70 Q95 70 95 20 L85 20 Q85 55 60 58 Q35 55 35 20 Z" fill="#D4AF37"/>
-              <ellipse cx="60" cy="20" rx="35" ry="8" fill="#F4D03F"/>
-              
-              {/* Handles */}
-              <path d="M25 25 Q5 25 5 45 Q5 60 25 55" stroke="#D4AF37" strokeWidth="6" fill="none"/>
-              <path d="M95 25 Q115 25 115 45 Q115 60 95 55" stroke="#D4AF37" strokeWidth="6" fill="none"/>
-              
-              {/* Decorative Pattern - Moroccan Style */}
-              <circle cx="60" cy="40" r="12" fill="none" stroke="#C8102E" strokeWidth="2"/>
-              <circle cx="60" cy="40" r="6" fill="#C8102E"/>
-              
-              {/* Small decorative dots */}
-              <circle cx="45" cy="35" r="3" fill="#00A651"/>
-              <circle cx="75" cy="35" r="3" fill="#00A651"/>
-              <circle cx="50" cy="50" r="2" fill="#1E90FF"/>
-              <circle cx="70" cy="50" r="2" fill="#1E90FF"/>
-              <circle cx="60" cy="55" r="2" fill="#FFD700"/>
-            </svg>
-          </div>
+          <img 
+            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/0bb5b05a9_ic_launcher.png"
+            alt="CAF Africa Cup of Nations Morocco 25"
+            className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-contain drop-shadow-2xl"
+          />
         </motion.div>
       </motion.div>
 
