@@ -4,7 +4,7 @@ import { Ticket, ArrowLeftRight, MoreHorizontal, Mail, HelpCircle } from 'lucide
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link } from 'react-router-dom';
-import { createPageUrl } from './utils';
+import { createPageUrl } from '@/utils';
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState('upcoming');
