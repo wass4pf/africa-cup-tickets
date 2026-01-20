@@ -15,9 +15,9 @@ export default function More() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-100 via-purple-50 to-white flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header with Email */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-purple-200 px-4 pt-6 pb-4">
+      <div className="bg-white border-b border-gray-200 px-4 pt-6 pb-4">
         <p className="text-2xl font-semibold text-gray-900">ad@gmail.com</p>
       </div>
 
@@ -31,10 +31,10 @@ export default function More() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.05 }}
-              className="w-full bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-sm flex items-center gap-4 hover:bg-white/90 transition-colors"
+              className="w-full bg-white rounded-2xl p-4 shadow-sm flex items-center gap-4 hover:bg-gray-50 transition-colors"
             >
-              <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <item.icon className="w-5 h-5 text-purple-700" />
+              <div className="w-10 h-10 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
+                <item.icon className="w-5 h-5 text-[#8B1A1A]" />
               </div>
               <span className="flex-1 text-left text-gray-700 font-medium">{item.label}</span>
               <ChevronRight className="w-5 h-5 text-gray-400" />
@@ -47,7 +47,7 @@ export default function More() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="w-full bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-sm flex items-center gap-4 hover:bg-white/90 transition-colors mt-6"
+          className="w-full bg-white rounded-2xl p-4 shadow-sm flex items-center gap-4 hover:bg-gray-50 transition-colors mt-6"
         >
           <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
             <LogOut className="w-5 h-5 text-red-600" />
@@ -58,7 +58,7 @@ export default function More() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="bg-white border-t border-purple-200 px-4 py-3 flex justify-around items-center sticky bottom-0">
+      <div className="bg-white border-t border-gray-200 px-4 py-3 flex justify-around items-center sticky bottom-0">
         <Link
           to={createPageUrl('Home')}
           className="flex flex-col items-center gap-1 transition-colors text-gray-400"
@@ -77,7 +77,7 @@ export default function More() {
 
         <button
           onClick={() => setActiveBottomTab('more')}
-          className="flex flex-col items-center gap-1 transition-colors text-purple-800"
+          className="flex flex-col items-center gap-1 transition-colors text-[#8B1A1A]"
         >
           <MoreHorizontal className="w-6 h-6" />
           <span className="text-xs font-medium">More</span>

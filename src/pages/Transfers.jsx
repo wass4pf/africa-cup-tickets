@@ -37,16 +37,16 @@ export default function Transfers() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-100 via-purple-50 to-white flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-purple-200 px-4 pt-6 pb-2 sticky top-0 z-10">
+      <div className="bg-white border-b border-gray-200 px-4 pt-6 pb-2 sticky top-0 z-10">
         <h1 className="text-2xl font-bold text-gray-900 mb-4">Transfers</h1>
         <div className="flex gap-8">
           <button
             onClick={() => setActiveTab('pending')}
             className={`pb-3 text-sm font-medium transition-colors relative ${
               activeTab === 'pending'
-                ? 'text-purple-800'
+                ? 'text-[#8B1A1A]'
                 : 'text-gray-500'
             }`}
           >
@@ -54,7 +54,7 @@ export default function Transfers() {
             {activeTab === 'pending' && (
               <motion.div
                 layoutId="transferTab"
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-800"
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#8B1A1A]"
               />
             )}
           </button>
@@ -62,7 +62,7 @@ export default function Transfers() {
             onClick={() => setActiveTab('completed')}
             className={`pb-3 text-sm font-medium transition-colors relative ${
               activeTab === 'completed'
-                ? 'text-purple-800'
+                ? 'text-[#8B1A1A]'
                 : 'text-gray-500'
             }`}
           >
@@ -70,7 +70,7 @@ export default function Transfers() {
             {activeTab === 'completed' && (
               <motion.div
                 layoutId="transferTab"
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-800"
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#8B1A1A]"
               />
             )}
           </button>
@@ -140,16 +140,16 @@ export default function Transfers() {
               <div
                 key={transfer.id}
                 onClick={() => navigate(createPageUrl('TransferDetails'))}
-                className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-sm flex items-center gap-4 cursor-pointer hover:bg-white/90 transition-colors"
+                className="bg-white rounded-2xl p-4 shadow-sm flex items-center gap-4 cursor-pointer hover:bg-gray-50 transition-colors"
               >
                 {/* Ticket Count Badge */}
-                <div className="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                <div className="flex-shrink-0 w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
                   <div className="flex items-center gap-1">
-                    <span className="text-lg font-bold text-purple-900">{transfer.ticketCount}</span>
+                    <span className="text-lg font-bold text-[#8B1A1A]">{transfer.ticketCount}</span>
                     {transfer.type === 'sent' ? (
-                      <ArrowUpRight className="w-3 h-3 text-purple-700" />
+                      <ArrowUpRight className="w-3 h-3 text-[#8B1A1A]" />
                     ) : (
-                      <ArrowDownLeft className="w-3 h-3 text-purple-700" />
+                      <ArrowDownLeft className="w-3 h-3 text-[#8B1A1A]" />
                     )}
                   </div>
                 </div>
@@ -180,7 +180,7 @@ export default function Transfers() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="bg-white border-t border-purple-200 px-4 py-3 flex justify-around items-center sticky bottom-0">
+      <div className="bg-white border-t border-gray-200 px-4 py-3 flex justify-around items-center sticky bottom-0">
         <Link
           to={createPageUrl('Home')}
           className="flex flex-col items-center gap-1 transition-colors text-gray-400"
@@ -191,7 +191,7 @@ export default function Transfers() {
 
         <button
           onClick={() => setActiveBottomTab('transfers')}
-          className="flex flex-col items-center gap-1 transition-colors text-purple-800"
+          className="flex flex-col items-center gap-1 transition-colors text-[#8B1A1A]"
         >
           <ArrowLeftRight className="w-6 h-6" />
           <span className="text-xs font-medium">Transfers</span>

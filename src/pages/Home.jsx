@@ -11,16 +11,16 @@ export default function Home() {
   const [activeBottomTab, setActiveBottomTab] = useState('my-tickets');
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-100 via-purple-50 to-white flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header with Tabs */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-purple-200 px-4 pt-6 pb-2 sticky top-0 z-10">
-        <h1 className="text-2xl font-bold text-purple-900 mb-4">My Tickets</h1>
+      <div className="bg-white border-b border-gray-200 px-4 pt-6 pb-2 sticky top-0 z-10">
+        <h1 className="text-2xl font-bold text-gray-900 mb-4">My Tickets</h1>
         <div className="flex gap-8">
           <button
             onClick={() => setActiveTab('upcoming')}
             className={`pb-3 text-sm font-medium transition-colors relative ${
               activeTab === 'upcoming'
-                ? 'text-purple-800'
+                ? 'text-[#8B1A1A]'
                 : 'text-gray-500'
             }`}
           >
@@ -28,7 +28,7 @@ export default function Home() {
             {activeTab === 'upcoming' && (
               <motion.div
                 layoutId="activeTab"
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-800"
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#8B1A1A]"
               />
             )}
           </button>
@@ -36,18 +36,18 @@ export default function Home() {
             onClick={() => setActiveTab('past')}
             className={`pb-3 text-sm font-medium transition-colors relative flex items-center gap-2 ${
               activeTab === 'past'
-                ? 'text-purple-800'
+                ? 'text-[#8B1A1A]'
                 : 'text-gray-500'
             }`}
           >
             Past events
-            <Badge variant="secondary" className="bg-purple-200 text-purple-800 rounded-full h-5 w-5 p-0 flex items-center justify-center text-xs">
+            <Badge variant="secondary" className="bg-gray-200 text-gray-600 rounded-full h-5 w-5 p-0 flex items-center justify-center text-xs">
               1
             </Badge>
             {activeTab === 'past' && (
               <motion.div
                 layoutId="activeTab"
-                className="absolute bottom-0 left-0 right-0 h-0.5 bg-purple-800"
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#8B1A1A]"
               />
             )}
           </button>
@@ -114,8 +114,8 @@ export default function Home() {
               <div className="space-y-6 mb-8">
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <Ticket className="w-6 h-6 text-purple-700" />
+                    <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center">
+                      <Ticket className="w-6 h-6 text-[#8B1A1A]" />
                     </div>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -125,23 +125,23 @@ export default function Home() {
 
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 mt-1">
-                    <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-purple-700" />
+                    <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-[#8B1A1A]" />
                     </div>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
                     If you logged into the app using an email address other than the one with which you purchased the tickets, please log out and log in again using the correct email address.
                   </p>
                 </div>
-              </div>
+                </div>
 
-              {/* FAQ Button */}
-              <Button
+                {/* FAQ Button */}
+                <Button
                 variant="outline"
-                className="w-full border-purple-300 text-purple-800 hover:bg-purple-50 font-medium"
-              >
+                className="w-full border-gray-300 text-gray-700 hover:bg-gray-50 font-medium"
+                >
                 F.A.Q.
-              </Button>
+                </Button>
             </motion.div>
           </div>
         ) : (
@@ -151,7 +151,7 @@ export default function Home() {
             className="max-w-2xl mx-auto"
           >
             {/* Thank You Message */}
-            <div className="flex items-center gap-3 mb-6 bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-sm">
+            <div className="flex items-center gap-3 mb-6 bg-white rounded-xl p-4 shadow-sm">
               <div className="w-10 h-10 bg-[#8B1A1A] rounded-full flex items-center justify-center flex-shrink-0">
                 <Ticket className="w-5 h-5 text-white" />
               </div>
@@ -164,7 +164,7 @@ export default function Home() {
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
               <div className="flex">
                 {/* Left Side - Event Image */}
-                <div className="w-40 bg-gradient-to-br from-purple-100 to-purple-50 flex items-center justify-center p-4 border-r-2 border-dashed border-purple-200">
+                <div className="w-40 bg-gray-50 flex items-center justify-center p-4 border-r-2 border-dashed border-gray-200">
                   <img
                     src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/0bb5b05a9_ic_launcher.png"
                     alt="CAF Africa Cup"
@@ -203,10 +203,10 @@ export default function Home() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="bg-white border-t border-purple-200 px-4 py-3 flex justify-around items-center sticky bottom-0">
+      <div className="bg-white border-t border-gray-200 px-4 py-3 flex justify-around items-center sticky bottom-0">
         <button
           onClick={() => setActiveBottomTab('my-tickets')}
-          className="flex flex-col items-center gap-1 transition-colors text-purple-800"
+          className="flex flex-col items-center gap-1 transition-colors text-[#8B1A1A]"
         >
           <Ticket className="w-6 h-6" />
           <span className="text-xs font-medium">My Tickets</span>

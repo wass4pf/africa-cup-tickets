@@ -1,14 +1,14 @@
 import Home from './pages/Home';
-import Transfers from './pages/Transfers';
-import TransferDetails from './pages/TransferDetails';
 import More from './pages/More';
+import TransferDetails from './pages/TransferDetails';
+import Transfers from './pages/Transfers';
 
 
 export const PAGES = {
     "Home": Home,
-    "Transfers": Transfers,
-    "TransferDetails": TransferDetails,
     "More": More,
+    "TransferDetails": TransferDetails,
+    "Transfers": Transfers,
 }
 
 export const pagesConfig = {
