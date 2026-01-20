@@ -10,15 +10,15 @@ export default function TransferBadge({ count, type }) {
       </div>
 
       {/* Badge Icon - Bottom Right */}
-      <div className={`absolute -bottom-1 -right-1 w-6 h-6 border-2 border-gray-50 rounded-full flex items-center justify-center ${
+      <div className={`absolute -bottom-1 -right-1 w-6 h-6 bg-white border-2 rounded-full flex items-center justify-center ${
         type === 'sent' 
-          ? 'bg-blue-100 border-blue-200' 
-          : 'bg-green-100 border-green-200'
+          ? 'border-blue-500' 
+          : 'border-green-500'
       }`}>
         {type === 'sent' ? (
-          <ArrowUpRight className="w-3.5 h-3.5 text-blue-600" />
+          <ArrowUpRight className="w-3.5 h-3.5 text-blue-500" />
         ) : (
-          <ArrowDownLeft className="w-3.5 h-3.5 text-green-600" />
+          <ArrowDownLeft className="w-3.5 h-3.5 text-green-500" />
         )}
       </div>
     </div>
