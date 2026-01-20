@@ -111,15 +111,13 @@ export default function Transfers() {
                 className="bg-white rounded-2xl p-4 shadow-sm flex items-center gap-4 cursor-pointer hover:bg-gray-50 transition-colors"
               >
                 {/* Ticket Count Badge */}
-                <div className="flex-shrink-0 w-10 h-10 bg-red-50 rounded-full flex items-center justify-center">
-                  <div className="flex items-center gap-1">
-                    <span className="text-lg font-bold text-[#8B1A1A]">{transfer.ticketCount}</span>
-                    {transfer.type === 'sent' ? (
-                      <ArrowUpRight className="w-3 h-3 text-[#8B1A1A]" />
-                    ) : (
-                      <ArrowDownLeft className="w-3 h-3 text-[#8B1A1A]" />
-                    )}
-                  </div>
+                <div className="flex-shrink-0 flex items-center justify-center">
+                  {transfer.type === 'sent' ? (
+                    <ArrowUpCircle className="w-8 h-8 text-purple-400" />
+                  ) : (
+                    <ArrowDownCircle className="w-8 h-8 text-gray-400" />
+                  )}
+                  <span className="absolute text-sm font-bold text-gray-700">{transfer.ticketCount}</span>
                 </div>
 
                 {/* Transfer Details */}
