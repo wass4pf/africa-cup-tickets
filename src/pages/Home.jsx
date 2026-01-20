@@ -138,10 +138,10 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="max-w-2xl mx-auto"
+            className="space-y-4"
           >
             {/* Thank You Message */}
-            <div className="flex items-center gap-3 mb-6 bg-white rounded-xl p-4 shadow-sm">
+            <div className="flex items-center gap-3 bg-white rounded-xl p-3 shadow-sm">
               <div className="w-10 h-10 bg-[#8B1A1A] rounded-full flex items-center justify-center flex-shrink-0">
                 <Ticket className="w-5 h-5 text-white" />
               </div>
@@ -151,39 +151,42 @@ export default function Home() {
             </div>
 
             {/* Event Ticket Card */}
-            <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="flex">
+            <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+              <div className="flex items-stretch">
                 {/* Left Side - Event Image */}
-                <div className="w-40 bg-gray-50 flex items-center justify-center p-4 border-r-2 border-dashed border-gray-200">
+                <div className="w-32 bg-gray-100 flex items-center justify-center p-3">
                   <img
-                    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/0bb5b05a9_ic_launcher.png"
+                    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/7146a9725_full-logo.png"
                     alt="CAF Africa Cup"
-                    className="w-full object-contain"
+                    className="w-full h-auto object-contain"
                   />
                 </div>
 
                 {/* Right Side - Event Details */}
-                <div className="flex-1 p-4">
-                  <div className="flex justify-between items-start mb-3">
-                    <div>
-                      <h3 className="font-bold text-gray-900 text-base mb-1">
+                <div className="flex-1 p-3 flex flex-col justify-between">
+                  <div className="flex justify-between items-start">
+                    <div className="flex-1 pr-2">
+                      <h3 className="font-semibold text-gray-900 text-sm mb-1 leading-tight">
                         Egypte vs Côte d'Ivoire | Quarts de finale
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-xs text-gray-600">
                         Grand Stade D'AGADIR
                       </p>
                     </div>
-                    <div className="text-right">
-                      <div className="text-2xl font-bold text-gray-900">10</div>
-                      <div className="text-xs text-gray-600">JAN</div>
+                    <div className="text-right flex-shrink-0">
+                      <div className="text-xl font-bold text-gray-900">10</div>
+                      <div className="text-xs text-gray-500">JAN</div>
                       <div className="text-sm font-semibold text-gray-700">26</div>
                     </div>
                   </div>
 
-                  {/* Ticket Count */}
-                  <div className="flex items-center justify-end gap-2 mt-4 text-sm text-gray-600">
-                    <Ticket className="w-4 h-4" />
-                    <span className="font-medium">1</span>
+                  {/* Bottom Row - Time and Ticket Count */}
+                  <div className="flex items-center justify-between mt-2 text-xs">
+                    <span className="text-gray-600">20:00</span>
+                    <div className="flex items-center gap-1 text-gray-600">
+                      <span className="font-medium">1</span>
+                      <Ticket className="w-3.5 h-3.5" />
+                    </div>
                   </div>
                 </div>
               </div>
