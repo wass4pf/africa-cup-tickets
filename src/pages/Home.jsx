@@ -65,45 +65,11 @@ export default function Home() {
             >
               {/* No Tickets Icon */}
               <div className="flex justify-center mb-6">
-                <div className="relative">
-                  <svg
-                    viewBox="0 0 100 100"
-                    className="w-24 h-24 text-gray-400"
-                  >
-                    {/* First Ticket */}
-                    <rect
-                      x="20"
-                      y="30"
-                      width="40"
-                      height="60"
-                      rx="4"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      transform="rotate(-15 40 60)"
-                    />
-                    <line x1="25" y1="45" x2="55" y2="45" stroke="currentColor" strokeWidth="2" transform="rotate(-15 40 60)" />
-                    <line x1="25" y1="55" x2="55" y2="55" stroke="currentColor" strokeWidth="2" transform="rotate(-15 40 60)" />
-                    
-                    {/* Second Ticket */}
-                    <rect
-                      x="40"
-                      y="20"
-                      width="40"
-                      height="60"
-                      rx="4"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      transform="rotate(15 60 50)"
-                    />
-                    <line x1="45" y1="35" x2="75" y2="35" stroke="currentColor" strokeWidth="2" transform="rotate(15 60 50)" />
-                    <line x1="45" y1="45" x2="75" y2="45" stroke="currentColor" strokeWidth="2" transform="rotate(15 60 50)" />
-                    
-                    {/* Sparkle */}
-                    <path d="M 85 75 L 88 78 L 85 81 L 82 78 Z" fill="currentColor" />
-                  </svg>
-                </div>
+                <img
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/46f000d86_two_qr_phone.png"
+                  alt="No tickets"
+                  className="w-24 h-24"
+                />
               </div>
 
               <h2 className="text-center text-gray-700 text-lg font-medium mb-6">
@@ -115,7 +81,11 @@ export default function Home() {
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 mt-1">
                     <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center">
-                      <Ticket className="w-6 h-6 text-[#8B1A1A]" />
+                      <img
+                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/0236c530e_qr_phone.png"
+                        alt="QR Phone"
+                        className="w-6 h-6"
+                      />
                     </div>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -126,7 +96,11 @@ export default function Home() {
                 <div className="flex gap-4">
                   <div className="flex-shrink-0 mt-1">
                     <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-[#8B1A1A]" />
+                      <img
+                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/a2395d01f_unknown_email.png"
+                        alt="Email"
+                        className="w-6 h-6"
+                      />
                     </div>
                   </div>
                   <p className="text-sm text-gray-600 leading-relaxed">
@@ -216,7 +190,11 @@ export default function Home() {
           to={createPageUrl('Transfers')}
           className="flex flex-col items-center gap-1 transition-colors text-gray-400"
         >
-          <ArrowLeftRight className="w-6 h-6" />
+          <img
+            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/c18d12009_ic_transfer.png"
+            alt="Transfers"
+            className="w-6 h-6"
+          />
           <span className="text-xs font-medium">Transfers</span>
         </Link>
 
