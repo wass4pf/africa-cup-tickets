@@ -6,6 +6,7 @@ import TransferDetails from './pages/TransferDetails';
 import Transfers from './pages/Transfers';
 import Welcome from './pages/Welcome';
 import SignIn from './pages/SignIn';
+import EnterPassword from './pages/EnterPassword';
 
 
 export const PAGES = {
@@ -17,6 +18,7 @@ export const PAGES = {
     "Transfers": Transfers,
     "Welcome": Welcome,
     "SignIn": SignIn,
+    "EnterPassword": EnterPassword,
 }
 
 export const pagesConfig = {
