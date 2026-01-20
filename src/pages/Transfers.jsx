@@ -87,44 +87,12 @@ export default function Transfers() {
               className="max-w-md w-full flex flex-col items-center"
             >
               {/* Empty State Icon */}
-              <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm">
-                <svg
-                  viewBox="0 0 100 100"
-                  className="w-16 h-16 text-gray-400"
-                >
-                  {/* First Ticket */}
-                  <rect
-                    x="25"
-                    y="35"
-                    width="30"
-                    height="45"
-                    rx="3"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    transform="rotate(-15 40 57)"
-                  />
-                  <line x1="28" y1="47" x2="52" y2="47" stroke="currentColor" strokeWidth="2" transform="rotate(-15 40 57)" />
-                  <line x1="28" y1="55" x2="52" y2="55" stroke="currentColor" strokeWidth="2" transform="rotate(-15 40 57)" />
-                  
-                  {/* Second Ticket */}
-                  <rect
-                    x="45"
-                    y="25"
-                    width="30"
-                    height="45"
-                    rx="3"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    transform="rotate(15 60 47)"
-                  />
-                  <line x1="48" y1="37" x2="72" y2="37" stroke="currentColor" strokeWidth="2" transform="rotate(15 60 47)" />
-                  <line x1="48" y1="45" x2="72" y2="45" stroke="currentColor" strokeWidth="2" transform="rotate(15 60 47)" />
-                  
-                  {/* Sparkle */}
-                  <path d="M 80 70 L 83 73 L 80 76 L 77 73 Z" fill="currentColor" />
-                </svg>
+              <div className="flex justify-center mb-6">
+                <img
+                  src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/46f000d86_two_qr_phone.png"
+                  alt="No pending transfers"
+                  className="w-32 h-32 object-contain"
+                />
               </div>
 
               <p className="text-gray-500 text-center">No pending messages</p>
