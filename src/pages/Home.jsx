@@ -156,7 +156,7 @@ export default function Home() {
               <div className="flex items-stretch bg-gray-100">
                 <div className="flex-1 p-1.5">
                   <img
-                    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/7146a9725_full-logo.png"
+                    src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/a6084067e_image.png"
                     alt="CAF Africa Cup"
                     className="w-full h-full object-contain"
                   />
