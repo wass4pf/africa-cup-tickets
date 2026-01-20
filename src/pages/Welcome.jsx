@@ -36,7 +36,7 @@ export default function Welcome() {
           <img
             src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/524cc0316_full-logo.png"
             alt="CAF Africa Cup of Nations Morocco 25"
-            className="w-80 h-auto mb-16"
+            className="w-64 h-auto mb-12"
           />
 
           {/* Login Button */}
