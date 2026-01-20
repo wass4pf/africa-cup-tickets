@@ -43,8 +43,9 @@ export default function Welcome() {
           <Button
             onClick={handleLogin}
             className="w-full bg-white hover:bg-gray-100 text-[#8B1A1A] font-bold text-lg py-6 rounded-xl shadow-lg"
+            style={{ fontFamily: 'Dunbar, sans-serif' }}
           >
-            LOG IN
+            BEGIN
           </Button>
         </motion.div>
       </div>
