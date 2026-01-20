@@ -16,7 +16,7 @@ export default function Splash() {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#C41E3A] to-[#8B1A1A] flex items-center justify-center px-6">
+    <div className="min-h-screen bg-[#8B1A1A] flex items-center justify-center px-6">
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -24,17 +24,14 @@ export default function Splash() {
         className="flex flex-col items-center"
       >
         <img
-          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/a6084067e_image.png"
+          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/1670eed13_ic_launcher.png"
           alt="CAF Africa Cup of Nations Morocco 25"
-          className="w-80 h-auto mb-12"
+          className="w-64 h-64 mb-8"
         />
         
-        <Button
-          onClick={() => navigate(createPageUrl('Home'))}
-          className="bg-[#8B1A1A] hover:bg-[#6B1515] text-white font-bold text-2xl py-8 px-16 rounded-2xl shadow-2xl border-4 border-[#C41E3A]"
-        >
+        <div className="bg-[#8B1A1A] text-white font-bold text-2xl px-12 py-3 rounded-xl">
           TICKETS
-        </Button>
+        </div>
       </motion.div>
     </div>
   );
