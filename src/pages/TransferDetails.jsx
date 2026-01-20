@@ -66,8 +66,10 @@ export default function TransferDetails() {
                   Gate 07 • Area 229 • Block 229
                 </p>
                 {/* Seat Details */}
-                <div className="flex items-center gap-3 bg-white rounded-xl p-3 border border-gray-200">
-                  <Ticket className="w-5 h-5 text-blue-300" />
+                <div className="flex items-center gap-3 bg-white rounded-xl p-3">
+                  <div className="w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
+                    <Ticket className="w-5 h-5 text-blue-300" />
+                  </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-900">Row U • Seat 18</p>
                     <p className="text-xs text-gray-600 mt-1">04010081232</p>
