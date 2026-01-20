@@ -73,7 +73,7 @@ export default function Home() {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 px-4 py-6">
+      <div className="flex-1 px-4 pt-2 pb-6">
         {activeTab === 'upcoming' ? (
           <div className="flex flex-col items-center justify-center py-12">
             <motion.div
