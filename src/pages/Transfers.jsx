@@ -111,16 +111,9 @@ export default function Transfers() {
                 onClick={() => navigate(createPageUrl('TransferDetails'))}
                 className="bg-white rounded-2xl p-4 shadow-sm flex items-center gap-4 cursor-pointer hover:bg-gray-50 transition-colors"
               >
-                {/* Ticket Count Badge */}
-                <div className="flex-shrink-0 flex flex-col items-center gap-1">
-                  <span className="text-lg font-bold text-gray-700">{transfer.ticketCount}</span>
-                  <div className="w-8 h-8 rounded-full border-2 border-gray-300 flex items-center justify-center">
-                    {transfer.type === 'sent' ? (
-                      <ArrowUpRight className="w-4 h-4 text-gray-500" />
-                    ) : (
-                      <ArrowDownLeft className="w-4 h-4 text-gray-500" />
-                    )}
-                  </div>
+                {/* Transfer Badge */}
+                <div className="flex-shrink-0">
+                  <TransferBadge count={transfer.ticketCount} type={transfer.type} />
                 </div>
 
                 {/* Transfer Details */}
