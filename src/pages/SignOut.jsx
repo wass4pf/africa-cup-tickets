@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { base44 } from '@/api/base44Client';
 import { createPageUrl } from '@/utils';
 
 export default function SignOut() {
+  const navigate = useNavigate();
+
   const handleSignOut = () => {
     base44.auth.logout(createPageUrl('Welcome'));
   };
