@@ -22,7 +22,7 @@ export default function Splash() {
         transition={{ duration: 0.6 }}
       >
         <img
-          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/2872e4fd3_Gemini_Generated_Image_d0dgewd0dgewd0dg.png"
+          src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/3a7047b2b_Gemini_Generated_Image_d0dgewd0dgewd0dg-removebg-preview.png"
           alt="CAF Africa Cup of Nations Morocco 25"
           className="w-full max-w-lg"
         />
