@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
+import { createPageUrl } from '@/utils';
 
 export default function EnterPassword() {
+  const navigate = useNavigate();
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
   const handleContinue = () => {
-    // Handle password submission
-    console.log('Password:', password);
+    navigate(createPageUrl('Home'));
   };
 
   const handleBack = () => {
-    // Handle back navigation
-    window.history.back();
+    navigate(createPageUrl('SignIn'));
   };
 
   return (

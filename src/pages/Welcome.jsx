@@ -10,7 +10,7 @@ export default function Welcome() {
   const [language, setLanguage] = useState('English');
 
   const handleLogin = () => {
-    navigate(createPageUrl('Home'));
+    navigate(createPageUrl('SignIn'));
   };
 
   return (

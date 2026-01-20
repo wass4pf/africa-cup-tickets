@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { createPageUrl } from '@/utils';
 
 export default function SignIn() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
 
   const handleNext = () => {
-    // Handle sign in logic
-    console.log('Email:', email);
+    navigate(createPageUrl('EnterPassword'));
   };
 
   return (
