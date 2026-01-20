@@ -220,13 +220,13 @@ export default function Home() {
           <span className="text-xs font-medium">Transfers</span>
         </Link>
 
-        <button
-          onClick={() => setActiveBottomTab('more')}
+        <Link
+          to={createPageUrl('More')}
           className="flex flex-col items-center gap-1 transition-colors text-gray-400"
         >
           <MoreHorizontal className="w-6 h-6" />
           <span className="text-xs font-medium">More</span>
-        </button>
+        </Link>
       </div>
     </div>
   );
