@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Ticket, ArrowLeftRight, MoreHorizontal, ChevronRight, User, Globe, Link2, CreditCard, LogOut } from 'lucide-react';
+import { Ticket, MoreHorizontal, ChevronRight, User, Globe, Link2, CreditCard, LogOut } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { createPageUrl } from '@/utils';
 
 export default function More() {
   const [activeBottomTab, setActiveBottomTab] = useState('more');
 
-  const menuItems = [
-    { icon: User, label: 'My Profile', path: '#' },
-    { icon: Globe, label: 'App language', path: '#' },
-    { icon: Link2, label: 'More information', path: '#' },
-    { icon: CreditCard, label: 'Support details', path: '#' },
-  ];
-
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      {/* Header with Email */}
+      {/* Header with Email - ANIMÉ */}
       <div className="bg-gray-50 px-4 pt-6 pb-4">
-        <p className="text-2xl font-semibold text-gray-900">ad@gmail.com</p>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }} // Départ : invisible et un peu plus bas
+          animate={{ opacity: 1, y: 0 }}  // Fin : visible et à sa place
+          transition={{ duration: 0.6, ease: "easeOut" }} // Animation douce de 0.6s
+          className="text-2xl font-semibold text-gray-900"
+        >
+          ad@gmail.com
+        </motion.p>
       </div>
 
       {/* Main Content */}
@@ -28,6 +28,7 @@ export default function More() {
           <motion.button
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }} // Léger délai pour effet de cascade
             className="w-full p-4 flex items-center gap-4 hover:bg-gray-100 transition-colors border-b border-gray-100"
           >
             <User className="w-5 h-5 text-gray-700 flex-shrink-0" />
@@ -37,7 +38,7 @@ export default function More() {
           <motion.button
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05 }}
+            transition={{ delay: 0.15 }}
             className="w-full p-4 flex items-center gap-4 hover:bg-gray-100 transition-colors"
           >
             <Globe className="w-5 h-5 text-gray-700 flex-shrink-0" />
@@ -51,7 +52,7 @@ export default function More() {
           <motion.button
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+            transition={{ delay: 0.2 }}
             className="w-full p-4 flex items-center gap-4 hover:bg-gray-100 transition-colors border-b border-gray-100"
           >
             <Link2 className="w-5 h-5 text-gray-700 flex-shrink-0" />
@@ -61,7 +62,7 @@ export default function More() {
           <motion.button
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
+            transition={{ delay: 0.25 }}
             className="w-full p-4 flex items-center gap-4 hover:bg-gray-100 transition-colors"
           >
             <CreditCard className="w-5 h-5 text-gray-700 flex-shrink-0" />
@@ -76,7 +77,7 @@ export default function More() {
             <motion.button
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.3 }}
               className="w-full bg-white rounded-xl p-4 flex items-center gap-4 hover:bg-gray-100 transition-colors"
             >
               <LogOut className="w-5 h-5 text-gray-700 flex-shrink-0" />
@@ -111,7 +112,7 @@ export default function More() {
 
         <button
           onClick={() => setActiveBottomTab('more')}
-          className="flex flex-col items-center gap-1 transition-colors text-[#8B1A1A]"
+          className="flex flex-col items-center gap-1 transition-colors text-[#a91101]" // COULEUR ROUGE APPLIQUÉE ICI
         >
           <MoreHorizontal className="w-6 h-6" />
           <span className="text-xs font-medium">More</span>
