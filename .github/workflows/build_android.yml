@@ -1,0 +1,52 @@
+name: Build Android APK
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Android se construit sur Linux (plus rapide)
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Java (Nécessaire pour Android)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: 1. Install Dependencies & Capacitor
+        run: |
+          npm install
+          # On installe le module Android spécifiquement
+          npm install @capacitor/core @capacitor/cli @capacitor/android
+
+      - name: 2. Build Web Project
+        run: npm run build
+
+      - name: 3. Initialize Android Project
+        run: |
+          npx cap init "Base44App" "com.base44.app" --web-dir dist
+          
+          # On ajoute Android (ignore erreur si existe déjà)
+          npx cap add android || true
+          
+          # On synchronise le code web vers le dossier Android
+          npx cap sync android
+
+      - name: 4. Build APK (Debug Version)
+        run: |
+          cd android
+          # On rend le script de build exécutable
+          chmod +x gradlew
+          # Commande magique pour créer l'APK
+          ./gradlew assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: mon-app-android
+          path: android/app/build/outputs/apk/debug/app-debug.apk
