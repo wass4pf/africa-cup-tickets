@@ -11,29 +11,26 @@ export default function TransferDetails() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b border-gray-200 px-4 py-4 sticky top-0 z-10">
+      {/* Main Content */}
+      <div className="px-4 pt-6 pb-6 space-y-6">
+        {/* Back Button */}
         <button
           onClick={() => navigate(-1)}
           className="flex items-center gap-2 text-gray-700 hover:text-gray-900"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <ChevronLeft className="w-5 h-5" />
         </button>
-      </div>
-
-      {/* Main Content */}
-      <div className="px-4 py-6 space-y-6">
         {/* Transfer Badge */}
         <div className="flex justify-center">
           <div className="relative inline-flex items-center justify-center">
             {/* Main Avatar */}
-            <div className="w-24 h-24 rounded-full bg-white flex items-center justify-center shadow-sm">
-              <span className="text-4xl font-bold text-gray-900">1</span>
+            <div className="w-20 h-20 rounded-full bg-[#F0F2F5] flex items-center justify-center">
+              <span className="text-3xl font-bold text-gray-900">1</span>
             </div>
 
             {/* Badge Icon - Bottom Right */}
-            <div className="absolute bottom-1 right-1 w-7 h-7 bg-white border-2 border-gray-300 rounded-full flex items-center justify-center shadow-sm">
-              <ArrowUpRight className="w-4 h-4 text-gray-400" />
+            <div className="absolute bottom-0 right-0 w-6 h-6 bg-transparent border-2 border-[#5B8DEE] rounded-full flex items-center justify-center">
+              <ArrowUpRight className="w-3.5 h-3.5" style={{ color: '#5B8DEE' }} />
             </div>
           </div>
         </div>
