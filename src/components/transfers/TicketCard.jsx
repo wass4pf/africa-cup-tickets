@@ -34,14 +34,14 @@ export default function TicketCard({ transfer }) {
               </div>
             </div>
           </div>
-        </div>
+          </div>
 
-        {/* Tear Line */}
-        <div className="relative px-5">
-          <div className="border-t-2 border-dashed border-gray-300"></div>
-        </div>
+          {/* Tear Line */}
+          <div className="relative px-5">
+            <div className="border-t-2 border-dashed border-gray-300"></div>
+          </div>
 
-        {/* Bottom Section - Expandable */}
+          {/* Bottom Section - Expandable */}
         <AnimatePresence>
           {isExpanded && (
             <motion.div
