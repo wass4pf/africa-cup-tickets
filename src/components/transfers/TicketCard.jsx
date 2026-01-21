@@ -37,18 +37,8 @@ export default function TicketCard({ transfer }) {
         </div>
 
         {/* Tear Line */}
-        <div
-          className="relative h-0"
-          style={{
-            borderTop: '2px dashed #D1D5DB',
-            marginLeft: '24px',
-            marginRight: '24px',
-          }}
-        >
-          {/* Left notch indicator */}
-          <div className="absolute -left-6 -top-1 w-2 h-2 bg-gray-200 rounded-full"></div>
-          {/* Right notch indicator */}
-          <div className="absolute -right-6 -top-1 w-2 h-2 bg-gray-200 rounded-full"></div>
+        <div className="relative px-5">
+          <div className="border-t-2 border-dashed border-gray-300"></div>
         </div>
 
         {/* Bottom Section - Expandable */}
