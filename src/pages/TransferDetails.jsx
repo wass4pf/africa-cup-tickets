@@ -42,7 +42,7 @@ export default function TransferDetails() {
           <div className="bg-white rounded-2xl shadow-sm overflow-hidden max-w-sm mx-auto">
             
             {/* PARTIE HAUTE (Toujours visible) */}
-            <div className="p-5 pb-4">
+            <div className="p-4 pb-3">
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-sm font-bold text-gray-800">1</span>
