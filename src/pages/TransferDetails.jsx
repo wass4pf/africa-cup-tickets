@@ -79,7 +79,7 @@ export default function TransferDetails() {
 
             {/* PARTIE BASSE (Détails du siège) */}
             <CollapsibleContent>
-              <div className="p-5 pt-2">
+              <div className="p-4 pt-2">
                 <p className="text-sm font-semibold text-gray-900 mb-3">
                   Gate 07 • Area 229 • Block 229
                 </p>
