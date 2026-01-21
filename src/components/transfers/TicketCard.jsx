@@ -7,17 +7,17 @@ export default function TicketCard({ transfer }) {
 
   return (
     <motion.div
-      className="relative mx-auto max-w-sm cursor-pointer"
+      className="relative mx-auto max-w-sm cursor-pointer px-4"
       onClick={() => setIsExpanded(!isExpanded)}
       layout
     >
-      <div
-        className="bg-white shadow-lg relative"
-        style={{
-          borderRadius: '16px',
-          clipPath: 'polygon(0 20px, 20px 20px, 20px 0, calc(100% - 20px) 0, calc(100% - 20px) 20px, 100% 20px, 100% calc(50% - 15px), calc(100% - 15px) 50%, 100% calc(50% + 15px), 100% calc(100% - 20px), calc(100% - 20px) calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 20px calc(100% - 20px), 0 calc(100% - 20px), 0 calc(50% + 15px), 15px 50%, 0 calc(50% - 15px))',
-        }}
-      >
+      <div className="bg-white shadow-lg relative rounded-2xl overflow-hidden">
+        {/* Left notch */}
+        <div className="absolute left-0 top-[140px] w-5 h-10 bg-gray-50 rounded-r-full z-10"></div>
+        {/* Right notch */}
+        <div className="absolute right-0 top-[140px] w-5 h-10 bg-gray-50 rounded-l-full z-10"></div>
+        
+        <div className="relative">
         {/* Top Section - Always Visible */}
         <div className="p-5">
           <div className="flex items-start gap-3">
