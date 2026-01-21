@@ -73,13 +73,11 @@ export default function More() {
           to={createPageUrl('Transfers')}
           className="flex flex-col items-center gap-1 transition-colors text-gray-400"
         >
-          <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
-            <img
-              src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/c18d12009_ic_transfer.png"
-              alt="Transfers"
-              className="w-5 h-5 object-contain"
-            />
-          </div>
+          <img
+            src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/c18d12009_ic_transfer.png"
+            alt="Transfers"
+            className="w-7 h-7 object-contain"
+          />
           <span className="text-xs font-medium">Transfers</span>
         </Link>
 
