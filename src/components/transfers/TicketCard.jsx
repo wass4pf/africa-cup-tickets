@@ -18,8 +18,8 @@ export default function TicketCard({ transfer }) {
         <div className="absolute right-0 top-[140px] w-5 h-10 bg-gray-50 rounded-l-full z-10"></div>
         
         <div className="relative">
-        {/* Top Section - Always Visible */}
-        <div className="p-5">
+          {/* Top Section - Always Visible */}
+          <div className="p-5">
           <div className="flex items-start gap-3">
             <div className="w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
               <span className="text-sm font-bold text-gray-800">1</span>
