@@ -4,9 +4,9 @@ import More from './pages/More';
 import SignIn from './pages/SignIn';
 import SignOut from './pages/SignOut';
 import Splash from './pages/Splash';
+import TransferDetails from './pages/TransferDetails';
 import Transfers from './pages/Transfers';
 import Welcome from './pages/Welcome';
-import TransferDetails from './pages/TransferDetails';
 
 
 export const PAGES = {
@@ -16,9 +16,9 @@ export const PAGES = {
     "SignIn": SignIn,
     "SignOut": SignOut,
     "Splash": Splash,
+    "TransferDetails": TransferDetails,
     "Transfers": Transfers,
     "Welcome": Welcome,
-    "TransferDetails": TransferDetails,
 }
 
 export const pagesConfig = {
