@@ -19,15 +19,12 @@ export default function TransferDetails() {
           <ChevronLeft className="w-5 h-5" />
         </button>
 
-        {/* Transfer Badge (Grand Format) */}
+        {/* Transfer Badge (Grand Format - Fond Blanc - Flèche Bleue) */}
         <div className="flex justify-center">
           <div className="relative inline-flex items-center justify-center">
-            {/* Main Avatar : FOND BLANC demandé */}
             <div className="w-20 h-20 rounded-full bg-white shadow-md flex items-center justify-center">
               <span className="text-3xl font-bold text-gray-900">1</span>
             </div>
-
-            {/* Badge Icon : BLEU remis comme à l'origine */}
             <div className="absolute bottom-0 right-0 w-8 h-8 bg-white border-2 border-[#5B8DEE] rounded-full flex items-center justify-center">
               <ArrowUpRight className="w-4 h-4" style={{ color: '#5B8DEE' }} />
             </div>
@@ -42,12 +39,13 @@ export default function TransferDetails() {
 
         {/* --- TICKET CARD --- */}
         <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-          <div className="bg-white rounded-2xl shadow-sm overflow-hidden transition-all duration-300">
+          {/* FOND DU BILLET : GRIS (#E5E5E5) */}
+          <div className="bg-[#E5E5E5] rounded-2xl shadow-sm overflow-hidden transition-all duration-300">
             
-            {/* Header */}
-            <div className="p-5 relative bg-white z-20">
+            {/* Header du Billet */}
+            <div className="p-5 relative z-20">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 bg-[#D1D1D6] rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-sm font-bold text-gray-800">1</span>
                 </div>
                 <div className="flex-1">
@@ -59,14 +57,14 @@ export default function TransferDetails() {
                   </div>
                 </div>
                 
-                {/* Flèche qui tourne */}
+                {/* Flèche animation */}
                 <CollapsibleTrigger asChild>
                    <button className="flex-shrink-0 mt-1 focus:outline-none">
                      <motion.div
                        animate={{ rotate: isOpen ? 180 : 0 }}
                        transition={{ duration: 0.3 }}
                      >
-                       <ChevronDown className="w-5 h-5 text-gray-400" />
+                       <ChevronDown className="w-5 h-5 text-gray-600" />
                      </motion.div>
                    </button>
                 </CollapsibleTrigger>
@@ -75,22 +73,30 @@ export default function TransferDetails() {
 
             {/* Contenu Dépliable */}
             <CollapsibleContent>
-              {/* Ligne de découpe */}
-              <div className="relative flex items-center w-full h-8 bg-white">
-                <div className="absolute left-0 w-3 h-6 bg-gray-50 rounded-r-full z-10" />
-                <div className="flex-1 border-t-2 border-dashed border-gray-100 mx-5 h-0" />
-                <div className="absolute right-0 w-3 h-6 bg-gray-50 rounded-l-full z-10" />
+              {/* --- LIGNE DE DÉCOUPE AVEC ENCOCHES --- */}
+              <div className="relative flex items-center w-full h-8">
+                {/* Encoche Gauche : 
+                   - bg-gray-50 (couleur du fond de l'écran pour faire "transparent")
+                   - rounded-r-full (arrondi vers la droite)
+                   - left-0 (collé à gauche)
+                */}
+                <div className="absolute left-0 w-4 h-8 bg-gray-50 rounded-r-full z-20" />
+                
+                {/* Ligne Pointillée */}
+                <div className="flex-1 border-t-2 border-dashed border-gray-400 mx-6 h-0 opacity-40" />
+                
+                {/* Encoche Droite : rounded-l-full (arrondi vers la gauche) */}
+                <div className="absolute right-0 w-4 h-8 bg-gray-50 rounded-l-full z-20" />
               </div>
 
-              {/* Détails */}
-              <div className="p-5 pt-0 bg-white">
+              {/* Détails du siège */}
+              <div className="p-5 pt-0">
                 <p className="text-sm font-semibold text-gray-900 mb-3">
                   Gate 07 • Area 229 • Block 229
                 </p>
-                <div className="flex items-center gap-3 bg-[#F9FAFB] rounded-xl p-3 border border-gray-100">
-                  <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 shadow-sm">
-                    {/* Icone remise en BLEU */}
-                    <Ticket className="w-5 h-5" style={{ color: '#5B8DEE' }} />
+                <div className="flex items-center gap-3 bg-[#DCDCDC] rounded-xl p-3">
+                  <div className="w-10 h-10 bg-[#C0C0C0] rounded-full flex items-center justify-center flex-shrink-0">
+                    <Ticket className="w-5 h-5 text-gray-700" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-gray-900">Row U • Seat 18</p>
