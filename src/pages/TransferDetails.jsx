@@ -19,7 +19,7 @@ export default function TransferDetails() {
           <ChevronLeft className="w-5 h-5" />
         </button>
 
-        {/* Transfer Badge (Grand format - Style original) */}
+        {/* Transfer Badge (Original : Fond Blanc + Flèche Bleue) */}
         <div className="flex justify-center">
           <div className="relative inline-flex items-center justify-center">
             <div className="w-20 h-20 rounded-full bg-white shadow-md flex items-center justify-center">
@@ -39,11 +39,10 @@ export default function TransferDetails() {
 
         {/* --- TICKET CARD --- */}
         <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-          {/* FOND BLANC (Original) */}
-          <div className="bg-white rounded-2xl shadow-sm overflow-hidden transition-all duration-300">
+          <div className="bg-white rounded-2xl shadow-sm overflow-hidden transition-all duration-300 relative">
             
             {/* Header */}
-            <div className="p-5 relative z-20">
+            <div className="p-5 relative z-20 bg-white">
               <div className="flex items-start gap-3">
                 <div className="w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
                   <span className="text-sm font-bold text-gray-800">1</span>
@@ -73,20 +72,23 @@ export default function TransferDetails() {
 
             {/* Contenu Dépliable */}
             <CollapsibleContent>
-              {/* --- LIGNE DE DÉCOUPE --- */}
-              <div className="relative flex items-center w-full h-8">
-                {/* Encoche Gauche : Plus visible (w-4 h-8) */}
-                <div className="absolute left-0 w-4 h-8 bg-gray-50 rounded-r-full z-10" />
+              {/* --- LIGNE DE DÉCOUPE (VISIBLE) --- */}
+              <div className="relative flex items-center w-full h-10 bg-white">
                 
-                {/* Ligne Pointillée : Un peu plus foncée pour être visible sur le blanc */}
-                <div className="flex-1 border-t-2 border-dashed border-gray-300 mx-6 h-0" />
+                {/* ENCOCHE GAUCHE : Gros demi-cercle gris collé à gauche */}
+                {/* IMPORTANT : bg-gray-50 doit être la même couleur que le fond de la page */}
+                <div className="absolute left-0 w-5 h-10 bg-gray-50 rounded-r-full z-50" />
                 
-                {/* Encoche Droite : Plus visible (w-4 h-8) */}
-                <div className="absolute right-0 w-4 h-8 bg-gray-50 rounded-l-full z-10" />
+                {/* Ligne Pointillée : Bien visible */}
+                <div className="flex-1 border-t-2 border-dashed border-gray-300 mx-7 h-0" />
+                
+                {/* ENCOCHE DROITE : Gros demi-cercle gris collé à droite */}
+                <div className="absolute right-0 w-5 h-10 bg-gray-50 rounded-l-full z-50" />
+                
               </div>
 
               {/* Détails */}
-              <div className="p-5 pt-0">
+              <div className="p-5 pt-0 bg-white">
                 <p className="text-sm font-semibold text-gray-900 mb-3">
                   Gate 07 • Area 229 • Block 229
                 </p>
