@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest # Android se construit sur Linux (plus rapide)
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -12,16 +12,16 @@ jobs:
         with:
           node-version: 20
 
-      - name: Setup Java (Nécessaire pour Android)
+      # C'EST ICI QUE C'ÉTAIT 17, ON PASSE À 21 POUR CORRIGER L'ERREUR
+      - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
 
       - name: 1. Install Dependencies & Capacitor
         run: |
           npm install
-          # On installe le module Android spécifiquement
           npm install @capacitor/core @capacitor/cli @capacitor/android
 
       - name: 2. Build Web Project
@@ -34,15 +34,14 @@ jobs:
           # On ajoute Android (ignore erreur si existe déjà)
           npx cap add android || true
           
-          # On synchronise le code web vers le dossier Android
+          # On synchronise le code web
           npx cap sync android
 
       - name: 4. Build APK (Debug Version)
         run: |
           cd android
-          # On rend le script de build exécutable
           chmod +x gradlew
-          # Commande magique pour créer l'APK
+          # On lance la compilation
           ./gradlew assembleDebug
 
       - name: Upload APK
