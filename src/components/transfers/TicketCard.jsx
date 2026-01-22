@@ -1,11 +1,13 @@
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Ticket, ChevronDown } from 'lucide-react'; // J'ai ajouté l'import de ChevronDown
+import { Ticket, ChevronDown } from 'lucide-react';
 
 export default function TicketCard() {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const roundedClass = "rounded-xl";
+  // CORRECTION : On définit juste la taille "2xl" ici
+  const radiusSize = "2xl"; 
 
   return (
     <motion.div
@@ -18,17 +20,21 @@ export default function TicketCard() {
         {/* --- PARTIE HAUTE --- */}
         <motion.div
           layout
-          className={`p-3 bg-white relative z-20 transition-all ${isExpanded ? `rounded-t-${roundedClass}` : roundedClass}`}
+          // LOGIQUE CORRIGÉE :
+          // Si ouvert : rounded-t-2xl (arrondi haut)
+          // Si fermé : rounded-2xl (tout arrondi)
+          className={`p-3 bg-white relative z-20 transition-all ${
+            isExpanded ? `rounded-t-${radiusSize}` : `rounded-${radiusSize}`
+          }`}
         >
-          {/* J'ai ajouté 'items-start' pour aligner en haut */}
           <div className="flex items-start gap-2">
             
-            {/* 1. La pastille numéro */}
+            {/* 1. Pastille */}
             <div className="w-8 h-8 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
               <span className="text-xs font-bold text-gray-800">1</span>
             </div>
             
-            {/* 2. Le texte (flex-1 pour pousser la flèche au bout) */}
+            {/* 2. Texte */}
             <div className="flex-1">
               <h3 className="font-bold text-gray-900 text-sm mb-1 pr-2">
                 Maroc vs Tanzanie | Huitièmes
@@ -39,11 +45,11 @@ export default function TicketCard() {
               </div>
             </div>
 
-            {/* 3. LA FLÈCHE (Ajoutée ici) */}
+            {/* 3. Flèche */}
             <motion.div
               animate={{ rotate: isExpanded ? 180 : 0 }}
               transition={{ duration: 0.3 }}
-              className="text-gray-400 mt-1" // mt-1 pour l'aligner visuellement avec le titre
+              className="text-gray-400 mt-1"
             >
               <ChevronDown className="w-5 h-5" />
             </motion.div>
@@ -90,18 +96,17 @@ export default function TicketCard() {
                   </div>
 
                   {/* Contenu du bas */}
-                  <div className={`bg-white rounded-b-${roundedClass} p-3 pt-1 pb-4`}>
+                  {/* CORRECTION : rounded-b-2xl s'applique correctement maintenant */}
+                  <div className={`bg-white rounded-b-${radiusSize} p-3 pt-1 pb-4`}>
                     
                     <p className="text-xs font-bold text-gray-900 mb-3">
                       Gate 07 • Area 229 • Block 229
                     </p>
 
                     <div className="flex items-center gap-3">
-                      <img 
-                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/24d914381_unnamed__1_-removebg-preview.png"
-                        alt="Ticket"
-                        className="w-8 h-8 object-contain flex-shrink-0"
-                      />
+                      <div className="w-8 h-8 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
+                        <Ticket className="w-4 h-4 text-[#93C5FD]" />
+                      </div>
                       <div>
                         <p className="text-sm font-bold text-gray-900">Row U • Seat 18</p>
                         <p className="text-xs text-gray-500">04010081232</p>
