@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Ticket } from 'lucide-react';
+import { Ticket, ChevronDown } from 'lucide-react'; // J'ai ajouté l'import de ChevronDown
 
 export default function TicketCard() {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Style compact conservé
   const roundedClass = "rounded-xl";
 
   return (
     <motion.div
-      // MODIFICATION ICI : J'ai mis 'w-full' au lieu de 'max-w-[260px]'
-      // La carte prendra maintenant toute la largeur du conteneur parent
       className="relative w-full cursor-pointer my-4"
       onClick={() => setIsExpanded(!isExpanded)}
       layout
@@ -23,17 +20,17 @@ export default function TicketCard() {
           layout
           className={`p-3 bg-white relative z-20 transition-all ${isExpanded ? `rounded-t-${roundedClass}` : roundedClass}`}
         >
+          {/* J'ai ajouté 'items-start' pour aligner en haut */}
           <div className="flex items-start gap-2">
-            {/* Icône du ticket */}
-            <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-              <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/128c95cb6_unnamed-removebg-preview.png"
-                alt="Ticket"
-                className="w-full h-full object-contain"
-              />
+            
+            {/* 1. La pastille numéro */}
+            <div className="w-8 h-8 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-xs font-bold text-gray-800">1</span>
             </div>
+            
+            {/* 2. Le texte (flex-1 pour pousser la flèche au bout) */}
             <div className="flex-1">
-              <h3 className="font-bold text-gray-900 text-sm mb-1">
+              <h3 className="font-bold text-gray-900 text-sm mb-1 pr-2">
                 Maroc vs Tanzanie | Huitièmes
               </h3>
               <div className="text-xs text-gray-600">
@@ -41,9 +38,19 @@ export default function TicketCard() {
                 <p className="mt-0.5">Complexe Sportif Prince MOULAY ABDELLAH</p>
               </div>
             </div>
+
+            {/* 3. LA FLÈCHE (Ajoutée ici) */}
+            <motion.div
+              animate={{ rotate: isExpanded ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+              className="text-gray-400 mt-1" // mt-1 pour l'aligner visuellement avec le titre
+            >
+              <ChevronDown className="w-5 h-5" />
+            </motion.div>
+
           </div>
           
-          {/* Indicateur visuel */}
+          {/* Indicateur visuel (trait du bas) */}
           {!isExpanded && (
             <motion.div 
               initial={{ opacity: 0 }} 
@@ -67,7 +74,7 @@ export default function TicketCard() {
             >
               <div className="-mt-[1px]">
                   
-                  {/* ZONE DE DÉCOUPE AVEC POINTILLÉS */}
+                  {/* ZONE DE DÉCOUPE */}
                   <div 
                     className="h-4 w-full relative flex items-center" 
                     style={{
@@ -79,7 +86,6 @@ export default function TicketCard() {
                       backgroundRepeat: 'no-repeat'
                     }}
                   >
-                     {/* Les pointillés sont bien là */}
                      <div className="w-full mx-4 border-t border-dashed border-gray-200"></div>
                   </div>
 
@@ -90,12 +96,10 @@ export default function TicketCard() {
                       Gate 07 • Area 229 • Block 229
                     </p>
 
-                    <div className="flex items-center gap-0">
-                      <img 
-                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/5ea957c10_unnamed__1_-removebg-preview.png"
-                        alt="Ticket"
-                        className="w-16 h-16 object-contain flex-shrink-0"
-                      />
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
+                        <Ticket className="w-4 h-4 text-[#93C5FD]" />
+                      </div>
                       <div>
                         <p className="text-sm font-bold text-gray-900">Row U • Seat 18</p>
                         <p className="text-xs text-gray-500">04010081232</p>
