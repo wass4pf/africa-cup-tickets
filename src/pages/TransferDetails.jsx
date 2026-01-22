@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronLeft, ArrowUpRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import TicketCard from './TicketCard'; // Vérifie que le chemin d'import est correct
+import TicketCard from '../components/transfers/TicketCard';
 
 export default function TransferDetails() {
   const navigate = useNavigate();
