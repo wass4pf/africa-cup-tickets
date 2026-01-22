@@ -1,4 +1,4 @@
-name: Build Android APK (Final Fix)
+name: Build Android APK (Fnal Fix)
 on: [push]
 
 jobs:
