@@ -10,13 +10,12 @@ export default function TicketCard({ transfer }) {
       className="relative mx-auto max-w-sm cursor-pointer px-4 my-6"
       onClick={() => setIsExpanded(!isExpanded)}
       layout
-      // IMPORTANT: On utilise drop-shadow sur le parent, pas box-shadow sur l'enfant
-      // Cela permet à l'ombre de suivre la découpe du ticket
+      // L'ombre suit la découpe grâce au drop-shadow
       style={{ filter: "drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1))" }}
     >
       <div className="relative">
         
-        {/* --- PARTIE HAUTE (Toujours visible) --- */}
+        {/* --- PARTIE HAUTE --- */}
         <div className="p-5 bg-white rounded-t-2xl relative z-20">
           <div className="flex items-start gap-3">
             <div className="w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
@@ -53,28 +52,25 @@ export default function TicketCard({ transfer }) {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="overflow-hidden" // Plus de bg-white ici, c'est géré par les enfants
+              className="overflow-hidden"
             >
               
-              {/* LE SECRET DU TICKET : Ce div fait la transition.
-                  Au lieu d'un bg-white solide, on utilise des gradients pour faire les trous.
-              */}
+              {/* ZONE DE DÉCOUPE (Juste les trous, sans pointillés) */}
               <div 
-                className="h-8 w-full relative flex items-center"
+                className="h-6 w-full relative" 
                 style={{
                   background: `
                     radial-gradient(circle at 0 50%, transparent 12px, white 12.5px) left, 
                     radial-gradient(circle at 100% 50%, transparent 12px, white 12.5px) right
                   `,
-                  backgroundSize: '51% 100%', // 51% pour éviter une ligne blanche au milieu
+                  backgroundSize: '51% 100%',
                   backgroundRepeat: 'no-repeat'
                 }}
               >
-                 {/* Les pointillés (purement décoratifs, posés par dessus) */}
-                 <div className="w-full mx-5 border-t-2 border-dashed border-gray-200"></div>
+                 {/* J'ai supprimé la div border-dashed qui était ici */}
               </div>
 
-              {/* Contenu du bas (Fond blanc standard) */}
+              {/* Contenu du bas */}
               <div className="bg-white rounded-b-2xl p-5 pt-2 space-y-4">
                 <div>
                   <p className="text-sm font-semibold text-gray-900 mb-3">
