@@ -104,7 +104,7 @@ export default function TicketCard() {
 
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
-                        <Ticket className="w-4 h-4 text-[#93C5FD]" />
+                        <Ticket className="w-4 h-4 text-[#999999]" />
                       </div>
                       <div>
                         <p className="text-sm font-bold text-gray-900">Row U • Seat 18</p>
