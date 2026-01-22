@@ -95,7 +95,7 @@ export default function TicketCard() {
                         <img 
                           src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/5ea957c10_unnamed__1_-removebg-preview.png"
                           alt="Ticket"
-                          className="w-4 h-4 object-contain"
+                          className="w-6 h-6 object-contain"
                         />
                       </div>
                       <div>
