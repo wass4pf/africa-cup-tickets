@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Ticket } from 'lucide-react';
 
-export default function TicketCard({ transfer }) {
+export default function TicketCard() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <motion.div
-      // J'ai SUPPRIMÉ la ligne "style={{ filter: drop-shadow... }}"
-      // Il n'y a plus aucune ombre autour de la carte. C'est du flat design pur.
+      // Pas de shadow, pas de border -> Design 100% plat pour une découpe nette
       className="relative mx-auto max-w-sm cursor-pointer px-4 my-6"
       onClick={() => setIsExpanded(!isExpanded)}
       layout
@@ -54,9 +53,10 @@ export default function TicketCard({ transfer }) {
               transition={{ duration: 0.3, ease: 'easeInOut' }}
               className="overflow-hidden relative z-10"
             >
-              {/* Petite marge négative pour coller parfaitement les blocs sans ligne blanche */}
+              {/* Marge négative pour coller les blocs sans ligne blanche */}
               <div className="-mt-[1px]">
-                  {/* ZONE DE DÉCOUPE (Les trous transparents nets) */}
+                  
+                  {/* ZONE DE DÉCOUPE (Trous transparents nets) */}
                   <div 
                     className="h-6 w-full relative" 
                     style={{
