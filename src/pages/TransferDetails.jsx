@@ -91,7 +91,7 @@ export default function TransferDetails() {
                   
                   <div className="flex-1 border-t border-dashed border-gray-300 mx-6 h-0" />
                   
-                  {/* Encoche DROITE : Mêmes réglages */}
+                  {/* Encoched DROITE : Mêmes réglages */}
                   <div className="absolute -right-[3px] w-4 h-6 bg-white rounded-l-full z-20" style={{boxShadow: 'inset 1px 0 1px rgba(0,0,0,0.05)'}} />
                 </div>
 
