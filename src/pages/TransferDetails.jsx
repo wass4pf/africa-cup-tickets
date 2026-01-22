@@ -9,7 +9,8 @@ export default function TransferDetails() {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    // CORRECTION: Fond de page BLANC comme sur la photo
+    <div className="min-h-screen bg-white">
       <div className="px-4 pt-6 pb-6 space-y-6">
         {/* Back Button */}
         <button
@@ -19,7 +20,7 @@ export default function TransferDetails() {
           <ChevronLeft className="w-5 h-5" />
         </button>
 
-        {/* Transfer Badge (Grand format - Haut de page) */}
+        {/* Transfer Badge (Haut de page) */}
         <div className="flex justify-center">
           <div className="relative inline-flex items-center justify-center">
             <div className="w-20 h-20 rounded-full bg-white shadow-md flex items-center justify-center">
@@ -40,13 +41,14 @@ export default function TransferDetails() {
         {/* --- TICKET MINIATURE --- */}
         <div className="mx-auto max-w-sm">
           <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-            <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden relative">
+            {/* CORRECTION: Fond du billet GRIS CLAIR (#F3F4F6) avec une bordure fine */}
+            <div className="bg-[#F3F4F6] rounded-xl shadow-sm border border-gray-200 overflow-hidden relative">
               
               {/* --- PARTIE HAUTE --- */}
-              <div className="p-3 relative z-10 bg-white">
+              <div className="p-3 relative z-10 bg-[#F3F4F6]">
                 <div className="flex items-start gap-3">
-                  {/* Rond "1" en GRIS */}
-                  <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  {/* Rond "1" gris un peu plus foncé */}
+                  <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
                     <span className="text-xs font-bold text-gray-800">1</span>
                   </div>
                   
@@ -77,28 +79,32 @@ export default function TransferDetails() {
               {/* --- CONTENU DÉPLIABLE --- */}
               <CollapsibleContent>
                 
-                {/* LIGNE DE DÉCOUPE (Sans traces) */}
-                <div className="relative flex items-center w-full h-4 bg-white">
-                  {/* Encoche GAUCHE avec margin négatif pour couvrir la bordure */}
-                  <div className="absolute -left-[1px] w-3 h-6 bg-gray-50 rounded-r-full z-20" />
+                {/* --- LIGNE DE DÉCOUPE PARFAITE --- */}
+                {/* Le fond de cette zone doit aussi être gris billet */}
+                <div className="relative flex items-center w-full h-6 bg-[#F3F4F6] overflow-visible">
+                  {/* Encoche GAUCHE : 
+                      - bg-white : Pour se fondre avec le fond de la page
+                      - w-4 : Plus large pour bien couvrir
+                      - -left-[3px] : Décalage plus fort pour cacher la bordure
+                  */}
+                  <div className="absolute -left-[3px] w-4 h-6 bg-white rounded-r-full z-20" style={{boxShadow: 'inset -1px 0 1px rgba(0,0,0,0.05)'}} />
                   
-                  <div className="flex-1 border-t border-dashed border-gray-200 mx-5 h-0" />
+                  <div className="flex-1 border-t border-dashed border-gray-300 mx-6 h-0" />
                   
-                  {/* Encoche DROITE avec margin négatif */}
-                  <div className="absolute -right-[1px] w-3 h-6 bg-gray-50 rounded-l-full z-20" />
+                  {/* Encoche DROITE : Mêmes réglages */}
+                  <div className="absolute -right-[3px] w-4 h-6 bg-white rounded-l-full z-20" style={{boxShadow: 'inset 1px 0 1px rgba(0,0,0,0.05)'}} />
                 </div>
 
-                {/* --- PARTIE BASSE (MODIFIÉE) --- */}
-                <div className="p-3 pt-1 bg-white">
+                {/* --- PARTIE BASSE --- */}
+                <div className="p-3 pt-1 bg-[#F3F4F6]">
                   <p className="text-xs font-semibold text-gray-900 mb-2">
                     Gate 07 • Area 229 • Block 229
                   </p>
                   
-                  {/* PLUS DE FOND GRIS ICI, JUSTE LE CONTENU */}
                   <div className="flex items-center gap-3 p-1"> 
-                    {/* Icone GRISE dans un rond GRIS CLAIR */}
-                    <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Ticket className="w-3.5 h-3.5 text-gray-500" />
+                    {/* Icone GRISE dans rond gris foncé */}
+                    <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Ticket className="w-3.5 h-3.5 text-gray-600" />
                     </div>
                     <div>
                       <p className="text-xs font-bold text-gray-900">Row U • Seat 18</p>
