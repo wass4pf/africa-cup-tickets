@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Build Android APK (Final Fix)
 on: [push]
 
 jobs:
@@ -12,7 +12,6 @@ jobs:
         with:
           node-version: 20
 
-      # C'EST ICI QUE C'ÉTAIT 17, ON PASSE À 21 POUR CORRIGER L'ERREUR
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -30,18 +29,37 @@ jobs:
       - name: 3. Initialize Android Project
         run: |
           npx cap init "Base44App" "com.base44.app" --web-dir dist
-          
-          # On ajoute Android (ignore erreur si existe déjà)
           npx cap add android || true
-          
-          # On synchronise le code web
           npx cap sync android
 
-      - name: 4. Build APK (Debug Version)
+      - name: 4. Fix Kotlin Duplicates (The Magic Step) 🪄
+        run: |
+          cd android
+          
+          # Cette commande force Gradle à utiliser une seule version de Kotlin pour tout le monde
+          # On ajoute ce bloc à la fin du fichier build.gradle principal
+          cat <<EOF >> build.gradle
+          
+          allprojects {
+              configurations.all {
+                  resolutionStrategy.eachDependency { details ->
+                      if (details.requested.group == 'org.jetbrains.kotlin' && details.requested.name.startsWith('kotlin-stdlib')) {
+                          details.useVersion '1.9.10'
+                      }
+                  }
+              }
+          }
+          EOF
+          
+          # On met aussi à jour la variable de version si elle existe
+          if [ -f "variables.gradle" ]; then
+            sed -i 's/kotlin_version = .*/kotlin_version = "1.9.10"/' variables.gradle
+          fi
+
+      - name: 5. Build APK (Debug Version)
         run: |
           cd android
           chmod +x gradlew
-          # On lance la compilation
           ./gradlew assembleDebug
 
       - name: Upload APK
