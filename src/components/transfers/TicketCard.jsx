@@ -24,9 +24,13 @@ export default function TicketCard() {
           className={`p-3 bg-white relative z-20 transition-all ${isExpanded ? `rounded-t-${roundedClass}` : roundedClass}`}
         >
           <div className="flex items-start gap-2">
-            {/* Taille compacte conservée */}
-            <div className="w-8 h-8 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-xs font-bold text-gray-800">1</span>
+            {/* Icône du ticket */}
+            <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0">
+              <img 
+                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/128c95cb6_unnamed-removebg-preview.png"
+                alt="Ticket"
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="flex-1">
               <h3 className="font-bold text-gray-900 text-sm mb-1">
