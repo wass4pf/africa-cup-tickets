@@ -34,7 +34,7 @@ export default function TransferDetails() {
         {/* Transfer Info */}
         <div className="text-center">
           <p className="text-sm text-gray-600 mb-1">Transferred to</p>
-          <p className="text-lg font-semibold text-gray-900">redu7@icloud.com</p>
+          <p className="text-lg font-semibold text-gray-900">nabilroumani@hotmail.com</p>
         </div>
 
         {/* --- TICKET CARD --- */}
