@@ -111,30 +111,27 @@ export default function TicketCard() {
 
                     <div className="flex items-center gap-4">
                       
-                      {/* CERCLE GRIS + ICÔNE TICKET MODIFIÉE */}
+                      {/* CERCLE GRIS + ICÔNE TICKET AJUSTÉE (Moins écrasée, toujours fine) */}
                       <div className="w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
                          <svg 
                            viewBox="0 0 24 24" 
                            fill="none" 
                            xmlns="http://www.w3.org/2000/svg"
-                           // J'ai gardé w-6 h-6 pour qu'il prenne de la place, mais le dessin dedans est plus plat.
                            className="w-6 h-6 text-gray-400 flex-shrink-0"
                          >
-                           {/* Contour redessiné pour être plus plat (de y=7 à y=17 au lieu de y=2 à y=22) */}
+                           {/* Contour redessiné : un peu plus haut que le précédent (y de 6 à 18 au lieu de 7 à 17) */}
                            <path 
-                             d="M4 7c-1.1 0-2 .9-2 2v1c1.1 0 2 .9 2 2s-1.1 2-2 2v1c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-1c-1.1 0-2-.9-2-2s1.1-2 2-2V9c0-1.1-.9-2-2-2H4Z" 
+                             d="M4 6c-1.1 0-2 .9-2 2v2c1.1 0 2 .9 2 2s-1.1 2-2 2v2c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-2c-1.1 0-2-.9-2-2s1.1-2 2-2V8c0-1.1-.9-2-2-2H4Z" 
                              stroke="currentColor" 
-                             // CHANGEMENT 1 : strokeWidth plus fin (1.5)
-                             strokeWidth="1.5"
+                             strokeWidth="1.5" // Reste fin
                              strokeLinecap="round"
                              strokeLinejoin="round"
                            />
                            {/* Ligne verticale ajustée à la nouvelle hauteur */}
                            <path 
-                             d="M16 7v10" 
+                             d="M16 6v12" 
                              stroke="currentColor" 
-                             // CHANGEMENT 2 : strokeWidth plus fin (1.5)
-                             strokeWidth="1.5"
+                             strokeWidth="1.5" // Reste fin
                              strokeLinecap="round"
                              strokeLinejoin="round"
                            />
