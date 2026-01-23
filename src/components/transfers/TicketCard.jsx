@@ -139,8 +139,8 @@ export default function TicketCard() {
                       </div>
 
                       <div>
-                        <p className="text-base font-normal text-gray-900">Row <span className="font-semibold">9</span> • Seat <span className="font-semibold">32</span></p>
-                        <p className="text-xs text-gray-500">18010092352</p>
+                        <p className="text-base font-normal text-gray-900">Row <span className="font-semibold">9</span> • Seat <span className="font-semibold">34</span></p>
+                        <p className="text-xs text-gray-500">18010092354</p>
                       </div>
                     </div>
 
