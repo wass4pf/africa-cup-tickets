@@ -111,29 +111,30 @@ export default function TicketCard() {
 
                     <div className="flex items-center gap-4">
                       
-                      {/* CERCLE GRIS + ICÔNE TICKET (CORRIGÉE : PLUS LONGUE) */}
+                      {/* CERCLE GRIS + ICÔNE TICKET (CORRIGÉE : LIGNE PLEINE) */}
                       <div className="w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
+                         {/* SVG PERSONNALISÉ (Forme allongée + Ligne pleine) */}
                          <svg 
                            viewBox="0 0 24 24" 
                            fill="none" 
                            xmlns="http://www.w3.org/2000/svg"
-                           // CHANGEMENT ICI : w-4 h-5 au lieu de w-5 h-5 pour rendre l'icône plus "longue" (plus haute que large)
-                           className="w-4 h-5 text-gray-400 flex-shrink-0"
+                           className="w-auto h-5 text-gray-400 flex-shrink-0"
                          >
+                           {/* Contour du ticket */}
                            <path 
-                             d="M2 9V6.5C2 4.01 4.01 2 6.5 2H17.5C19.99 2 22 4.01 22 6.5V9C20.34 9 19 10.34 19 12C19 13.66 20.34 15 22 15V17.5C22 19.99 19.99 22 17.5 22H6.5C4.01 22 2 19.99 2 17.5V15C3.66 15 5 13.66 5 12C5 10.34 3.66 9 2 9Z" 
+                             d="M5 9V6.5C5 4.01 7.01 2 9.5 2H14.5C16.99 2 19 4.01 19 6.5V9C17.34 9 16 10.34 16 12C16 13.66 17.34 15 19 15V17.5C19 19.99 16.99 22 14.5 22H9.5C7.01 22 5 19.99 5 17.5V15C6.66 15 8 13.66 8 12C8 10.34 6.66 9 5 9Z" 
                              stroke="currentColor" 
                              strokeWidth="2"
                              strokeLinecap="round"
                              strokeLinejoin="round"
                            />
+                           {/* Ligne verticale SOLIDE (comme sur l'exemple joint) */}
                            <path 
-                             d="M16 2V22" 
+                             d="M12 2V22" 
                              stroke="currentColor" 
                              strokeWidth="2" 
                              strokeLinecap="round" 
                              strokeLinejoin="round"
-                             strokeDasharray="4 4"
                            />
                          </svg>
                       </div>
