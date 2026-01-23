@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Ticket } from 'lucide-react'; // On garde Ticket pour l'icône du haut
+import { ChevronDown, Ticket } from 'lucide-react';
 
 export default function TicketCard() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -23,10 +23,9 @@ export default function TicketCard() {
         >
           <div className="flex items-start gap-3">
             
-            {/* --- BADGE 1 (Version Ticket coupé - inchangée) --- */}
+            {/* --- BADGE 1 (Ticket coupé) --- */}
             <div className="relative w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
               <span className="text-sm font-bold text-gray-800 z-10 pr-1">1</span>
-              {/* L'icône ticket de Lucide est parfaite pour cet effet coupé */}
               <Ticket 
                 className="absolute -right-1 w-5 h-5 text-gray-300" 
                 strokeWidth={2} 
@@ -102,33 +101,31 @@ export default function TicketCard() {
 
                     <div className="flex items-center gap-4">
                       
-                      {/* CERCLE GRIS + ICÔNE TICKET PERSONNALISÉE (LIGNE SOLIDE) */}
+                      {/* CERCLE GRIS + ICÔNE TICKET CORRIGÉE (Ligne solide, non déformée) */}
                       <div className="w-12 h-12 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
-                         {/* --- SVG PERSONNALISÉ AVEC LIGNE SOLIDE --- */}
+                         {/* SVG Personnalisé avec trait plus fin (1.5) pour éviter l'effet "déformé" */}
                          <svg 
-                           width="24" height="24" viewBox="0 0 24 24" fill="none" 
+                           viewBox="0 0 24 24" 
+                           fill="none" 
                            xmlns="http://www.w3.org/2000/svg"
-                           className="w-6 h-6 text-gray-400" // Couleur grise appliquée ici
+                           className="w-6 h-6 text-gray-400 flex-shrink-0"
                          >
-                           {/* Contour du ticket */}
                            <path 
                              d="M2 9V6.5C2 4.01 4.01 2 6.5 2H17.5C19.99 2 22 4.01 22 6.5V9C20.34 9 19 10.34 19 12C19 13.66 20.34 15 22 15V17.5C22 19.99 19.99 22 17.5 22H6.5C4.01 22 2 19.99 2 17.5V15C3.66 15 5 13.66 5 12C5 10.34 3.66 9 2 9Z" 
                              stroke="currentColor" 
-                             strokeWidth="2" 
+                             strokeWidth="1.5" 
                              strokeLinecap="round" 
                              strokeLinejoin="round"
                            />
-                           {/* Ligne solide verticale */}
+                           {/* Ligne verticale solide */}
                            <path 
                              d="M16 2V22" 
                              stroke="currentColor" 
-                             strokeWidth="2" 
+                             strokeWidth="1.5" 
                              strokeLinecap="round" 
                              strokeLinejoin="round"
-                             // Pas de strokeDasharray = ligne solide
                            />
                          </svg>
-                         {/* ------------------------------------------ */}
                       </div>
 
                       <div>
