@@ -109,14 +109,33 @@ export default function TicketCard() {
                       Gate 07 • Area 229 • Block 229
                     </p>
 
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-center gap-4">
                       
-                      {/* ICÔNE TICKET */}
-                      <img 
-                        src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/696f816de3955d53dc61efeb/e8e02a256_unnamed__1_-removebg-preview.png"
-                        alt="Ticket"
-                        className="w-10 h-10 object-contain flex-shrink-0"
-                      />
+                      {/* CERCLE GRIS + ICÔNE TICKET (TAILLE AJUSTÉE ICI) */}
+                      <div className="w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
+                          <svg 
+                            viewBox="0 0 24 24" 
+                            fill="none" 
+                            xmlns="http://www.w3.org/2000/svg"
+                            // CHANGEMENT: w-6 h-6 au lieu de w-5 h-5 pour que l'icône soit un peu plus grande
+                            className="w-6 h-6 text-gray-400 flex-shrink-0"
+                          >
+                            <path 
+                              d="M2 9V6.5C2 4.01 4.01 2 6.5 2H17.5C19.99 2 22 4.01 22 6.5V9C20.34 9 19 10.34 19 12C19 13.66 20.34 15 22 15V17.5C22 19.99 19.99 22 17.5 22H6.5C4.01 22 2 19.99 2 17.5V15C3.66 15 5 13.66 5 12C5 10.34 3.66 9 2 9Z" 
+                              stroke="currentColor" 
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path 
+                              d="M16 2V22" // Ligne décalée à droite
+                              stroke="currentColor" 
+                              strokeWidth="2" 
+                              strokeLinecap="round" 
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                      </div>
 
                       <div>
                         <p className="text-base font-normal text-gray-900">Row U • Seat 18</p>
