@@ -14,33 +14,33 @@ export default function Transfers() {
     {
       id: 1,
       type: 'sent',
-      email: 'mohammed.sadry@gmail.com',
-      date: '04 JAN',
-      time: '15:35',
+      email: 'aalaouiyounes@gmail.com',
+      date: '18 JAN',
+      time: '18:02',
       ticketCount: 1
     },
     {
       id: 2,
-      type: 'received',
-      email: 'abdessamadelbehja@hotmail.com',
-      date: '03 JAN',
-      time: '15:48',
+      type: 'sent',
+      email: 'redu7@icloud.com',
+      date: '18 JAN',
+      time: '18:10',
       ticketCount: 1
     },
     {
       id: 3,
       type: 'sent',
-      email: 'aminfki67@gmail.com',
-      date: '30 DEC',
-      time: '23:04',
+      email: 'nabilroumani@hotmail.com',
+      date: '18 JAN',
+      time: '18:14',
       ticketCount: 1
     },
     {
       id: 4,
-      type: 'received',
-      email: 'user@example.com',
-      date: '28 DEC',
-      time: '14:20',
+      type: 'sent',
+      email: 'ossama.addou@outlook.com',
+      date: '18 JAN',
+      time: '18:20',
       ticketCount: 1
     }
   ];
