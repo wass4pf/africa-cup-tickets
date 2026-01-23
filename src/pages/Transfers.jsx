@@ -34,6 +34,14 @@ export default function Transfers() {
       date: '30 DEC',
       time: '23:04',
       ticketCount: 1
+    },
+    {
+      id: 4,
+      type: 'received',
+      email: 'user@example.com',
+      date: '28 DEC',
+      time: '14:20',
+      ticketCount: 1
     }
   ];
 
