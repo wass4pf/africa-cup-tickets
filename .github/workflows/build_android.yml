@@ -1,4 +1,4 @@
-name: Build Android APK (Fnal Fix)
+name: Build Android APK (Fnal fFix)
 on: [push]
 
 jobs:
