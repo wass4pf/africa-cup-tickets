@@ -77,7 +77,7 @@ export default function TicketCard() {
             >
               <div className="-mt-[1px]">
                   
-                  {/* ZONE DE DÉCOUPE (Notches + Ligne personnalisée) */}
+                  {/* ZONE DE DÉCOUPE */}
                   <div 
                     className="h-4 w-full relative flex items-center justify-center" 
                     style={{
@@ -89,14 +89,13 @@ export default function TicketCard() {
                       backgroundRepeat: 'no-repeat'
                     }}
                   >
-                     {/* REMPLACEMENT DE LA BORDURE CSS PAR UN SVG POUR CONTROLER L'ÉCART */}
                      <div className="w-full mx-4 h-[2px] overflow-hidden">
                         <svg width="100%" height="2">
                           <line 
                             x1="0" y1="1" x2="100%" y2="1" 
-                            stroke="#E5E7EB" // Couleur gray-200
+                            stroke="#E5E7EB"
                             strokeWidth="2" 
-                            strokeDasharray="10 6" // ICI : 10px de trait, 6px d'espace (plus espacé)
+                            strokeDasharray="10 6"
                             strokeLinecap="round" 
                           />
                         </svg>
@@ -112,13 +111,14 @@ export default function TicketCard() {
 
                     <div className="flex items-center gap-4">
                       
-                      {/* CERCLE GRIS + ICÔNE TICKET (Alignement et SVG OK) */}
+                      {/* CERCLE GRIS + ICÔNE TICKET (CORRIGÉE : PLUS LONGUE) */}
                       <div className="w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
                          <svg 
                            viewBox="0 0 24 24" 
                            fill="none" 
                            xmlns="http://www.w3.org/2000/svg"
-                           className="w-5 h-5 text-gray-400 flex-shrink-0"
+                           // CHANGEMENT ICI : w-4 h-5 au lieu de w-5 h-5 pour rendre l'icône plus "longue" (plus haute que large)
+                           className="w-4 h-5 text-gray-400 flex-shrink-0"
                          >
                            <path 
                              d="M2 9V6.5C2 4.01 4.01 2 6.5 2H17.5C19.99 2 22 4.01 22 6.5V9C20.34 9 19 10.34 19 12C19 13.66 20.34 15 22 15V17.5C22 19.99 19.99 22 17.5 22H6.5C4.01 22 2 19.99 2 17.5V15C3.66 15 5 13.66 5 12C5 10.34 3.66 9 2 9Z" 
@@ -133,6 +133,7 @@ export default function TicketCard() {
                              strokeWidth="2" 
                              strokeLinecap="round" 
                              strokeLinejoin="round"
+                             strokeDasharray="4 4"
                            />
                          </svg>
                       </div>
