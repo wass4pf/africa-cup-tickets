@@ -109,7 +109,7 @@ export default function TicketCard() {
                       Gate 07 • Area 229 • Block 229
                     </p>
 
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-start gap-4">
                       
                       {/* ICÔNE TICKET */}
                       <img 
