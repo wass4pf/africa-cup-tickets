@@ -12,14 +12,14 @@ export default function TicketCard() {
       onClick={() => setIsExpanded(!isExpanded)}
       layout
     >
-      <div className="relative">
+      {/* Ajout d'un bg-white global pour éviter les artefacts gris dans les coins */}
+      <div className="relative bg-white rounded-xl overflow-hidden">
         
         {/* --- PARTIE HAUTE --- */}
         <motion.div
           layout
-          className={`p-3 bg-white relative z-20 transition-all ${
-            isExpanded ? `rounded-t-${radiusSize}` : `rounded-${radiusSize}`
-          }`}
+          // Retrait des rounded conditionnels ici car le conteneur parent gère l'arrondi global
+          className="p-3 relative z-20"
         >
           <div className="flex items-start gap-3">
             
@@ -73,23 +73,26 @@ export default function TicketCard() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="overflow-hidden relative z-10"
+              className="relative z-10"
             >
-              <div className="-mt-[1px]">
+              <div>
                   
-                  {/* ZONE DE DÉCOUPE */}
+                  {/* ZONE DE DÉCOUPE NETTE */}
+                  {/* Le fond est blanc, et on "creuse" des cercles transparents sur les côtés */}
                   <div 
-                    className="h-4 w-full relative flex items-center justify-center" 
+                    className="h-4 w-full relative flex items-center justify-center bg-white" 
                     style={{
-                      background: `
-                        radial-gradient(circle at 0 50%, transparent 8px, white 8.5px) left, 
-                        radial-gradient(circle at 100% 50%, transparent 8px, white 8.5px) right
+                        // Les dégradés vont du transparent (le trou) vers le blanc (le reste du ticket)
+                      backgroundImage: `
+                        radial-gradient(circle at 0 50%, transparent 8px, white 8.5px),
+                        radial-gradient(circle at 100% 50%, transparent 8px, white 8.5px)
                       `,
+                      backgroundPosition: 'left, right',
                       backgroundSize: '51% 100%',
                       backgroundRepeat: 'no-repeat'
                     }}
                   >
-                     <div className="w-full mx-4 h-[2px] overflow-hidden">
+                     <div className="w-full mx-4 h-[2px] overflow-hidden z-10">
                         <svg width="100%" height="2">
                           <line 
                             x1="0" y1="1" x2="100%" y2="1" 
@@ -103,7 +106,8 @@ export default function TicketCard() {
                   </div>
 
                   {/* Contenu du bas */}
-                  <div className={`bg-white rounded-b-${radiusSize} p-4 pt-3 pb-8`}>
+                  {/* Retrait du rounded-b ici aussi */}
+                  <div className="p-4 pt-3 pb-8">
                     
                     <p className="text-xs font-bold text-gray-900 mb-4">
                       Gate 07 • Area 229 • Block 229
@@ -111,33 +115,15 @@ export default function TicketCard() {
 
                     <div className="flex items-center gap-4">
                       
-                      {/* CERCLE GRIS + ICÔNE TICKET (CORRIGÉE : HORIZONTALE & PROPRE) */}
-                      <div className="w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0">
-                         <svg 
-                           viewBox="0 0 24 24" 
-                           fill="none" 
-                           xmlns="http://www.w3.org/2000/svg"
-                           // w-5 h-5 est la taille parfaite pour que ça rentre sans toucher les bords
-                           className="w-5 h-5 text-gray-400 flex-shrink-0"
-                         >
-                           {/* Contour Horizontal : Identique à l'icône Lucide 'Ticket' standard */}
-                           <path 
-                             d="M2 9V6.5C2 4.01 4.01 2 6.5 2H17.5C19.99 2 22 4.01 22 6.5V9C20.34 9 19 10.34 19 12C19 13.66 20.34 15 22 15V17.5C22 19.99 19.99 22 17.5 22H6.5C4.01 22 2 19.99 2 17.5V15C3.66 15 5 13.66 5 12C5 10.34 3.66 9 2 9Z" 
-                             stroke="currentColor" 
-                             strokeWidth="2"
-                             strokeLinecap="round"
-                             strokeLinejoin="round"
-                           />
-                           {/* Ligne verticale SOLIDE (x à 14.5 pour être un peu décalée comme un vrai ticket) ou centrée */}
-                           {/* Sur ton image, elle semble un peu décalée vers la droite, comme le "stub" d'un billet */}
-                           <path 
-                             d="M16 2V22" // Ligne décalée à droite (standard ticket stub)
-                             stroke="currentColor" 
-                             strokeWidth="2" 
-                             strokeLinecap="round" 
-                             strokeLinejoin="round"
-                           />
-                         </svg>
+                      {/* CERCLE GRIS + ICÔNE TICKET (PARFAITEMENT COHÉRENTE) */}
+                      <div className="relative w-10 h-10 bg-[#F0F2F5] rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
+                         {/* 1. On utilise la MÊME icône Lucide que celle du haut pour la forme exacte */}
+                         <Ticket 
+                           className="w-5 h-5 text-gray-400" 
+                           strokeWidth={2} 
+                         />
+                         {/* 2. On ajoute une barre verticale solide par-dessus les pointillés */}
+                         <div className="absolute h-3 w-[2px] bg-gray-400 rounded-full left-[calc(50%+3px)]"></div>
                       </div>
 
                       <div>
