@@ -35,10 +35,10 @@ export default function TicketCard() {
             {/* Texte Header */}
             <div className="flex-1 pt-0.5">
               <h3 className="font-bold text-gray-900 text-sm mb-1 pr-2">
-                Maroc vs Tanzanie | Huitièmes de finale
+                Maroc vs Sénégal |  Finale
               </h3>
               <div className="text-[11px] text-gray-600 leading-tight">
-                <p>04.01.2026 • 17:00</p>
+                <p>18.01.2026 • 20:00</p>
                 <p className="mt-0.5">Complexe Sportif Prince MOULAY ABDELLAH</p>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function TicketCard() {
                   <div className={`bg-white rounded-b-${radiusSize} p-4 pt-3 pb-8`}>
                     
                     <p className="text-xs font-bold text-gray-900 mb-4">
-                      Gate 07 • Area 229 • Block 229
+                      Gate 06 • Area 139 • Block 139
                     </p>
 
                     <div className="flex items-center gap-4">
@@ -139,8 +139,8 @@ export default function TicketCard() {
                       </div>
 
                       <div>
-                        <p className="text-base font-normal text-gray-900">Row <span className="font-semibold">U</span> • Seat <span className="font-semibold">18</span></p>
-                        <p className="text-xs text-gray-500">04010081232</p>
+                        <p className="text-base font-normal text-gray-900">Row <span className="font-semibold">9</span> • Seat <span className="font-semibold">31</span></p>
+                        <p className="text-xs text-gray-500">18010092351</p>
                       </div>
                     </div>
 
