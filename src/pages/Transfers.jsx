@@ -14,7 +14,7 @@ export default function Transfers() {
     {
       id: 1,
       type: 'sent',
-      email: 'aalaouiyounes@gmail.com',
+      email: 'ossama.addou@outlook.com',
       date: '18 JAN',
       time: '18:02',
       ticketCount: 1
@@ -22,7 +22,7 @@ export default function Transfers() {
     {
       id: 2,
       type: 'sent',
-      email: 'redu7@icloud.com',
+      email: 'nabilroumani@hotmail.com',
       date: '18 JAN',
       time: '18:10',
       ticketCount: 1
@@ -30,7 +30,7 @@ export default function Transfers() {
     {
       id: 3,
       type: 'sent',
-      email: 'nabilroumani@hotmail.com',
+      email: 'redu7@icloud.com',
       date: '18 JAN',
       time: '18:14',
       ticketCount: 1
@@ -38,7 +38,7 @@ export default function Transfers() {
     {
       id: 4,
       type: 'sent',
-      email: 'ossama.addou@outlook.com',
+      email: 'aalaouiyounes@gmail.com',
       date: '18 JAN',
       time: '18:20',
       ticketCount: 1
